@@ -1,19 +1,16 @@
 import operator
-nameList=[]
 scoreList=[]
 nameScoreList=[]
 resName=[]
 for _ in range(int(input())):
     name = input()
     score = float(input())
-    nameList.append(name)
     scoreList.append(score)
     nameScoreList.append([name,score])
 minScoreVal=min(scoreList)
 while min(scoreList)==minScoreVal:
     indxMinVal=operator.indexOf(scoreList,minScoreVal)
     operator.delitem(scoreList,indxMinVal)
-    operator.delitem(nameList,indxMinVal)
     operator.delitem(nameScoreList,indxMinVal)
 sorted_by_score=sorted(nameScoreList, key=operator.itemgetter(1))
 slgScoreVal=min(scoreList)
