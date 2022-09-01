@@ -1,0 +1,34 @@
+import re
+def minion_game(string):
+    lowstring=string.casefold()
+    vowels=set(re.findall(r'[aeiou]',lowstring))
+    consonants=set(re.findall(r'[qwrtpsdfghjklzxcvbnmy]',lowstring))
+    countV=0
+    countC=0
+    for v in vowels:
+        spos=0
+        while len(lowstring)>spos!=-1:
+            pos=(lowstring.find(v,spos))
+            if pos!=-1:
+                countV+=len(lowstring)-pos
+                spos=pos+1
+            else:
+                spos=-1
+    for c in consonants:
+        spos=0
+        while len(lowstring)>spos!=-1:
+            pos=(lowstring.find(c,spos))
+            if pos!=-1:
+                countC+=len(lowstring)-pos
+                spos=pos+1
+            else:
+                spos=-1
+    if countV>countC:
+        print('Kevin', countV)
+    elif countC>countV:
+        print('Stuart', countC)
+    else:
+        print('Draw')
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
