@@ -1,0 +1,7 @@
+import itertools
+res=[]
+string=input().split()
+var=itertools.permutations(string[0],int(string[1]))
+for v in var:
+    res.append(''.join(v))
+print(*(sorted(res)),sep='\n')
