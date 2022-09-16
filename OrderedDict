@@ -1,0 +1,10 @@
+from collections import OrderedDict
+odict=OrderedDict()
+n=int(input())
+for _ in range(n):
+    key,val=input().rsplit(' ',1)
+    if key in odict:
+        odict[key]=odict[key]+int(val)
+    else:
+        odict[key]=int(val)
+for key,val in odict.items(): print(key,val)
