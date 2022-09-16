@@ -1,0 +1,5 @@
+n=int(input())
+N=set(map(int,input().split(' ',n)))
+m=int(input())
+M=set(map(int,input().split(' ',m)))
+print(*sorted(N.difference(M).union(M.difference(N))),sep='\n')
