@@ -1,0 +1,8 @@
+n=int(input())
+string=set(map(int,input().split(' ',n)))
+m=int(input())
+for _ in range(m):
+    func,num=input().split()
+    B=set(map(int,input().split(' ',int(num))))
+    eval('string.'+func+'(B)')
+print(sum(string))
