@@ -1,0 +1,29 @@
+import operator
+scoreList=[]
+nameScoreList=[]
+resName=[]
+for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    scoreList.append(score)
+    nameScoreList.append([name,score])
+minScoreVal=min(scoreList)
+while min(scoreList)==minScoreVal:
+    indxMinVal=operator.indexOf(scoreList,minScoreVal)
+    operator.delitem(scoreList,indxMinVal)
+    operator.delitem(nameScoreList,indxMinVal)
+sorted_by_score=sorted(nameScoreList, key=operator.itemgetter(1))
+slgScoreVal=min(scoreList)
+getscore=operator.itemgetter(1)
+getname=operator.itemgetter(0)
+scoreList=list(map(getscore,sorted_by_score))
+for i in sorted_by_score:
+    if (getscore(i))==slgScoreVal:
+        resName.append(getname(i))
+print(*sorted(resName), sep='\n')  
+
+
+a = [[input(), float(input())] for i in range(int(input()))]
+s = sorted(set([x[1] for x in a]))
+for name in sorted(x[0] for x in a if x[1] == s[1]):
+    print(name)
